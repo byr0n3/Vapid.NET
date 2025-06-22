@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Company>Byrone</Company>
+		<Authors>Byrone</Authors>
+
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<Features>strict</Features>
+		<AnalysisLevel>latest</AnalysisLevel>
+
+		<DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<NoWarn>$(NoWarn);MA0016;MA0046;MA0048</NoWarn>
+
+		<EleganceVersion>0.3.2</EleganceVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="2025.1.0-eap1"/>
+
+		<PackageReference Include="Microsoft.Extensions.Options" Version="10.0.0-preview.5.25277.114"/>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0-preview.5.25277.114"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Internal\Encryption.Hkdf.cs">
+			<DependentUpon>Encryption.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Internal\Encryption.Parameters.cs">
+			<DependentUpon>Encryption.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\CHANGELOG.md">
+			<Link>CHANGELOG.md</Link>
+		</Content>
+		<Content Include="..\README.md">
+			<Link>README.md</Link>
+		</Content>
+	</ItemGroup>
+
+</Project>
